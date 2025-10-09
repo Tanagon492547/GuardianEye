@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GuardianEye - Real-time Detection</title>
+    
+    <!-- แก้ไข Path ให้ตรงกับโครงสร้างใหม่ของเอเธนส์ -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>ยินดีต้อนรับสู่หน้าเว็บที่ปลอดภัยที่สุุด 888</h1>
+    <p>นี่คือการทดลองงใช้การตรวจโจร</p>
+
+    <div class="video-container">
+        <img id="webcam" src="{% url 'video_feed' %}" alt="Video Stream">
+    </div>
+    
+    <!-- แก้ไข Path ให้ตรงกับโครงสร้างใหม่ของเอเธนส์ -->
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
+
