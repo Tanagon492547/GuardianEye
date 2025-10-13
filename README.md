@@ -30,7 +30,7 @@ cd GuardianEye
 
 ```bash
 
-python \-m venv GuardianEye_env  
+python -m venv GuardianEye_env  
 
 ```
 
@@ -40,7 +40,7 @@ GuardianEye_env\\Scripts\\activate
 
 ```bash
 
-python3 \-m venv GuardianEye_env  
+python3 -m venv GuardianEye_env  
 
 ```
 source GuardianEye_env/bin/activate
