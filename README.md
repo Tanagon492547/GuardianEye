@@ -18,7 +18,7 @@
 ```bash
 
 git clone \<your-repository-url\>  
-cd ProjectGuardianEye
+cd GuardianEye
 
 ```
 
@@ -28,12 +28,12 @@ cd ProjectGuardianEye
 
 \# สำหรับ Windows  
 
-python \-m venv GuardianEye  
-GuardianEye\\Scripts\\activate
+python \-m venv GuardianEye_env  
+GuardianEye_env\\Scripts\\activate
 
 \# สำหรับ macOS/Linux  
-python3 \-m venv GuardianEye  
-source GuardianEye/bin/activate
+python3 \-m venv GuardianEye_env 
+source GuardianEye_env/bin/activate
 
 ### **3\. ติดตั้งไลบรารีที่จำเป็น (Install Dependencies)**
 
@@ -78,3 +78,5 @@ PROJECTGUARDIANEYE/
 └── requirements.txt          \# รายชื่อไลบรารีที่ต้องใช้
 
 ขอให้สนุกกับการพัฒนาโปรเจกต์นะ\! 🐱
+
+
