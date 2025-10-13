@@ -28,11 +28,21 @@ cd GuardianEye
 
 \# สำหรับ Windows  
 
+```bash
+
 python \-m venv GuardianEye_env  
+
+```
+
 GuardianEye_env\\Scripts\\activate
 
-\# สำหรับ macOS/Linux  
+\# สำหรับ macOS/Linux 
+
+```bash
+
 python3 \-m venv GuardianEye_env  
+
+```
 source GuardianEye_env/bin/activate
 
 ### **3\. ติดตั้งไลบรารีที่จำเป็น (Install Dependencies)**
