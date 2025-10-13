@@ -32,7 +32,7 @@ python \-m venv GuardianEye_env
 GuardianEye_env\\Scripts\\activate
 
 \# สำหรับ macOS/Linux  
-python3 \-m venv GuardianEye_env 
+python3 \-m venv GuardianEye_env  
 source GuardianEye_env/bin/activate
 
 ### **3\. ติดตั้งไลบรารีที่จำเป็น (Install Dependencies)**
@@ -41,11 +41,19 @@ source GuardianEye_env/bin/activate
 
 ```bash
 
-pip install \-r requirements.txt
+pip install -r requirements.txt
 
 ```
 
-### **4\. รันเซิร์ฟเวอร์ (Run the Development Server)**
+### **4\. อย่าลืมอัพเดต ultralytics ให้เป็นเวอร์ชั่นช่าสุด **
+
+```bash
+
+pip install --upgrade ultralytics
+
+```
+
+### **5\. รันเซิร์ฟเวอร์ (Run the Development Server)**
 
 เมื่อติดตั้งทุกอย่างเสร็จเรียบร้อย ก็ถึงเวลารันโปรเจกต์\!
 
