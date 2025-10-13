@@ -15,14 +15,19 @@
 
 ### **1\. โคลนโปรเจกต์ (Clone the Repository)**
 
+```bash
+
 git clone \<your-repository-url\>  
 cd ProjectGuardianEye
+
+```
 
 ### **2\. สร้างสภาพแวดล้อมเสมือน (Create a Virtual Environment)**
 
 แนะนำให้สร้าง Virtual Environment เพื่อแยกไลบรารีของโปรเจกต์นี้ออกจากโปรเจกต์อื่นๆ
 
 \# สำหรับ Windows  
+
 python \-m venv GuardianEye  
 GuardianEye\\Scripts\\activate
 
@@ -34,13 +39,21 @@ source GuardianEye/bin/activate
 
 เราได้เตรียมไฟล์ requirements.txt ไว้ให้แล้ว คุณสามารถติดตั้งทุกอย่างได้ในคำสั่งเดียว
 
+```bash
+
 pip install \-r requirements.txt
+
+```
 
 ### **4\. รันเซิร์ฟเวอร์ (Run the Development Server)**
 
 เมื่อติดตั้งทุกอย่างเสร็จเรียบร้อย ก็ถึงเวลารันโปรเจกต์\!
 
+```bash
+
 python manage.py runserver
+
+```
 
 จากนั้นเปิดเว็บเบราว์เซอร์แล้วไปที่ http://127.0.0.1:8000/ คุณจะเห็นหน้าเว็บ GuardianEye พร้อมวิดีโอสตรีมจากกล้องของคุณ\!
 
