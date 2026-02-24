@@ -10,12 +10,30 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1>ยินดีต้อนรับสู่หน้าเว็บที่ปลอดภัยที่สุุด 888</h1>
-    <p>นี่คือการทดลองงใช้การตรวจโจร</p>
+    <!-- Hero Banner Section -->
+    <section class="hero-banner">
+        <!-- Background Effects -->
+        <div class="hero-background">
+            <div class="dots-pattern left"></div>
+            <div class="stripes-pattern right"></div>
+            <div class="glow-dot"></div>
+        </div>
 
-    <div class="video-container">
-        <img id="webcam" src="{% url 'video_feed' %}" alt="Video Stream">
-    </div>
+        <!-- Header Text -->
+        <div class="hero-header">
+            <h2 class="hero-title">GUARDIAN <span class="highlight">EYE</span></h2>
+        </div>
+
+        <!-- Main Banner Content -->
+        <div class="hero-content-wrapper">
+            <section class="content-section">
+                <div class="video-container">
+                     <img id="webcam" src="{% url 'video_feed' %}" alt="Video Stream">
+                </div>
+            </section>
+            <h3 class="banner-label">Real-time Detection System</h3>
+        </div>
+    </section>
     
     <!-- แก้ไข Path ให้ตรงกับโครงสร้างใหม่ของเอเธนส์ -->
     <script src="{% static 'js/script.js' %}"></script>

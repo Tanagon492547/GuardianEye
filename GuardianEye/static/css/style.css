@@ -1,75 +1,299 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #1a0033 0%, #2d0052 50%, #1a0033 100%);
+    color: #ecf0f1;
+    overflow-x: hidden;
+}
+
+/* ================== HERO BANNER SECTION ================== */
+.hero-banner {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1a0033 0%, #2d0052 50%, #1a0033 100%);
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Dots Pattern - Left Side */
+.dots-pattern {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle, rgba(255, 255, 255, 0.15) 2px, transparent 2px);
+    background-size: 30px 30px;
+    background-position: 0 0;
+}
+
+.dots-pattern.left {
+    left: 0;
+    top: 30%;
+    width: 15%;
+    height: 50%;
+    background-size: 25px 25px;
+}
+
+/* Diagonal Stripes Pattern - Right Side */
+.stripes-pattern {
+    position: absolute;
+    width: 20%;
+    height: 50%;
+    top: 0;
+    right: 0;
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 10px,
+        rgba(255, 255, 255, 0.08) 10px,
+        rgba(255, 255, 255, 0.08) 20px
+    );
+}
+
+/* Glowing Dot - Right Side */
+.glow-dot {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(255, 100, 150, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    bottom: 20%;
+    right: 5%;
+    filter: blur(40px);
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Hero Header */
+.hero-header {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: slideDown 1s ease-out;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.hero-title .highlight {
+    color: #ff3333;
+    animation: glow-text 2s ease-in-out infinite;
+}
+
+/* Hero Content Wrapper */
+.hero-content-wrapper {
+    position: relative;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    margin: 0;
-    background-color: #2c3e50; /* เปลี่ยนสีพื้นหลังให้ดูเท่ขึ้น */
-    color: #ecf0f1; /* เปลี่ยนสีตัวอักษรเป็นสีขาวนวล */
-    overflow: hidden;
+    gap: 2rem;
+    animation: slideUp 1s ease-out 0.3s backwards;
 }
 
-@keyframes slide-up {
+/* Hero Banner Box */
+.hero-banner-box {
+    width: 500px;
+    height: 300px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Wave Animation Container */
+.wave-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.wave {
+    position: absolute;
+    width: 100%;
+    height: 60%;
+    bottom: 0;
+    left: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,50 Q300,0 600,50 T1200,50 L1200,120 L0,120 Z" fill="%23ff3333" opacity="0.1"/></svg>');
+    background-repeat: repeat-x;
+    background-size: 600px 120px;
+    transform: translateY(0);
+}
+
+.wave:nth-child(1) {
+    animation: wave 6s linear infinite;
+    opacity: 0.8;
+    bottom: 10px;
+}
+
+.wave:nth-child(2) {
+    animation: wave 7s linear infinite reverse;
+    opacity: 0.6;
+    bottom: 5px;
+}
+
+.wave:nth-child(3) {
+    animation: wave 8s linear infinite;
+    opacity: 0.4;
+    bottom: 0px;
+}
+
+.banner-label {
+    position: relative;
+    z-index: 3;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #ff3333;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: fadeIn 1s ease-out 0.6s backwards;
+}
+
+/* ================== ANIMATIONS ================== */
+@keyframes wave {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 600px 0;
+    }
+}
+
+@keyframes slideDown {
     from {
-        transform: translateY(100px);
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+}
+
+@keyframes glow-text {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(255, 51, 51, 0.5);
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(255, 51, 51, 0.8);
+    }
+}
+
+@keyframes fadeIn {
+    from {
         opacity: 0;
     }
     to {
-        transform: translateY(0);
         opacity: 1;
     }
 }
 
-/* --- อัปเดตสไตล์สำหรับ H1 --- */
+/* ================== CONTENT SECTION ================== */
+.content-section {
+    width: 100%;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #1a0033 0%, #2d0052 50%, #1a0033 100%);
+    min-height: auto;
+}
+
 h1 {
     font-size: 3em;
     margin-bottom: 0.5em;
     letter-spacing: 2px;
     text-align: center;
+    color: #ecf0f1;
 }
 
-/* สไตล์สำหรับตัวอักษรแต่ละตัวที่ถูกสร้างโดย JavaScript */
 h1 span {
-    display: inline-block; /* ทำให้ transform ทำงานได้ */
-    /* เรียกใช้อนิเมชันใหม่ที่เราสร้างขึ้น */
+    display: inline-block;
     animation: pulse 2.5s infinite ease-in-out;
 }
 
-/* อนิเมชันใหม่สำหรับทำให้ตัวอักษรขยายใหญ่-เล็ก */
 @keyframes pulse {
     0%, 100% {
         transform: scale(1);
     }
     50% {
-        transform: scale(1.2); /* ขยายใหญ่ขึ้น 20% */
+        transform: scale(1.2);
     }
 }
-/* -------------------------- */
 
 p {
     font-size: 1.2em;
     margin-top: 0;
-    animation: slide-up 1s ease-out 1s backwards;
+    margin-bottom: 2rem;
+    color: #ecf0f1;
 }
-
 
 .video-container {
-    margin: 20px auto;
+
     border: 5px solid #ecf0f1;
     border-radius: 10px;
-    width: 80%;
-    max-width: 960px;
-    background-color: #000;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.4);
-    animation: slide-up 1s ease-out 1.5s backwards;
 }
-
 #webcam {
     width: 100%;
     height: auto;
     border-radius: 5px;
-    display: block; /* แก้ปัญหาขอบล่างของรูป */
+    display: block;
 }
 
