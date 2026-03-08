@@ -226,6 +226,7 @@ body {
     }
 }
 
+
 @keyframes glow-text {
     0%, 100% {
         text-shadow: 0 0 10px rgba(255, 51, 51, 0.5);
